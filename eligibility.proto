@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.voting.eligibility;
+
+service VotingEligibility {
+  rpc getDetails(Details) returns (Status) {}
+  rpc getAge(Age) returns (Eligibility) {}
+}
+
+message Details {
+  string name = 1;
+  string nationality = 2;
+  int32 adhaar_id = 3;
+}
+
+message Status {
+  string status = 1;
+}
+
+message Age {
+  int32 age = 1;
+}
+
+message Eligibility {
+  string eligible = 1;
+  string notEligible = 2;
+} 
